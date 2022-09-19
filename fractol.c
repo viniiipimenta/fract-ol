@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:31:06 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/19 12:56:08 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/19 13:29:22 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@ int	main(int argc, char **argv)
 	double		kr;
 	double		ki;
 
-	if (argc > 4)
+	if (argc == 1 || argc > 4)
 	{
 		write(1, "invalid number of arguments!", 28);
+		write(1, "./fractol julia <real number> <imaginary number>", 48);
+		write(1, "\n", 1);
+		write(1, "./fractol mandelbrot", 20);
 		return (0);
 	}
-	else if (argc > 1 && argc < 5)
+	else if (argc > 2 && argc < 5)
 	{
 		mlx.kr = kr;
 		mlx.ki = ki;
