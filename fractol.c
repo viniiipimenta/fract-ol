@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:31:06 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/19 10:51:05 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/19 11:07:32 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	t_fractol mlx;
+	t_fractol	mlx;
 
 	mlx.mlx = mlx_init();
 	mlx.min_r = -2.0;
@@ -25,4 +25,3 @@ int	main(void)
 	draw_fractal(&mlx);
 	mlx_loop(mlx.mlx);
 }
-

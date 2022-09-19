@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 10:10:12 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/19 11:00:25 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/19 11:04:10 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	mandelbrot(t_fractol *mlx, int x, int y, double cr, double ci)
 {
-	int	n;	
+	int		n;	
 	double	zr;
 	double	zi;
 	double	tmp;
-	int	is_in_set;
-
+	int		is_in_set;
 
 	zr = 0;
 	zi = 0;
