@@ -6,30 +6,49 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 10:11:07 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/19 11:06:17 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/19 12:30:51 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	draw_fractal(t_fractol *mlx)
+void	draw_fractal(t_fractol *mlx, int arg)
 {
 	int		x;
 	int		y;
 	double	num_real;
 	double	num_imaginary;
 
-	y = -1;
-	while (++y < HEIGHT)
+	if (arg > 1)
 	{
-		x = -1;
-		while (++x < WIDTH)
+		y = -1;
+		while (++y < HEIGHT)
 		{
-			num_real = mlx->min_r + (double)x
-				* (mlx->max_r - mlx->min_r) / WIDTH;
-			num_imaginary = mlx->min_i + (double)y
-				* (mlx->max_i - mlx->min_i) / HEIGHT;
-			mandelbrot(mlx, x, y, num_real, num_imaginary);
+			x = -1;
+			while (++x < WIDTH)
+			{
+				num_real = mlx->min_r + (double)x
+					* (mlx->max_r - mlx->min_r) / WIDTH;
+				num_imaginary = mlx->min_i + (double)y
+					* (mlx->max_i - mlx->min_i) / HEIGHT;
+				julia(mlx, x, y, num_real, num_imaginary);
+			}
+		}
+	}
+	else
+	{
+		y = -1;
+		while (++y < HEIGHT)
+		{
+			x = -1;
+			while (++x < WIDTH)
+			{
+				num_real = mlx->min_r + (double)x
+					* (mlx->max_r - mlx->min_r) / WIDTH;
+				num_imaginary = mlx->min_i + (double)y
+					* (mlx->max_i - mlx->min_i) / HEIGHT;
+				mandelbrot(mlx, x, y, num_real, num_imaginary);
+			}
 		}
 	}
 }
