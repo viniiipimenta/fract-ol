@@ -1,7 +1,7 @@
 NAME = fractol
 
 
-SRCS = fract-ol.c draw_fractal.c mandelbrot.c
+SRCS = fractol.c draw_fractal.c mandelbrot.c
 
 
 OBJS = ${SRCS:.c=.o}
