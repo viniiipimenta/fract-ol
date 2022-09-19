@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fract-ol.c                                         :+:      :+:    :+:   */
+/*   fractol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:31:06 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/19 10:35:24 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/19 10:51:05 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,15 @@
 
 int	main(void)
 {
-	t_fractol f; // Structure for fract'ol variables
+	t_fractol mlx;
 
-	f.mlx = mlx_init(); // Initialize mlx
-	// Value of complex numbers on left edge of window:
-	f.min_r = -2.0;
-	// Value of complex numbers on right edge of window:
-	f.max_r = 1.0;
-	// Value of complex numbers on top edge of window:
-	f.min_i = -1.5;
-	// Value of complex numbers on bottom edge of window:
-	f.max_i = f.min_i + (f.max_r - f.min_r) * HEIGHT / WIDTH;
-	// Create window:
-	f.win = mlx_new_window(f.mlx, WIDTH, HEIGHT, "Fract-ol");
-	// Start fractal calculation:
-	draw_fractal(&f);
-	// mlx's infinite loop:
-	mlx_loop(f.mlx);
+	mlx.mlx = mlx_init();
+	mlx.min_r = -2.0;
+	mlx.max_r = 1.0;
+	mlx.min_i = -1.5;
+	mlx.max_i = mlx.min_i + (mlx.max_r - mlx.min_r) * HEIGHT / WIDTH;
+	mlx.win = mlx_new_window(mlx.mlx, WIDTH, HEIGHT, "Fract-ol");
+	draw_fractal(&mlx);
+	mlx_loop(mlx.mlx);
 }
 
