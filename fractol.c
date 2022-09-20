@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:31:06 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/20 14:06:39 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/20 15:08:17 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	cmd_mlx(t_fractol *mlx, int argc)
 	mlx->win = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "Fract-ol");
 	draw_fractal(mlx, argc);
 	mlx_mouse_hook(mlx->win, handle_mouse, mlx);
+	mlx_key_hook(mlx->win, key_hook , mlx);
+	mlx_hook(mlx->win,17, 0L, handle_close, mlx);
 	mlx_loop(mlx->mlx);
 }
 
