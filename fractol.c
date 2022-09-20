@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:31:06 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/20 15:08:17 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/20 15:59:00 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,13 @@ void	cmd_mlx(t_fractol *mlx, int argc)
 	mlx->min_i = -1.5;
 	mlx->max_i = mlx->min_i + (mlx->max_r - mlx->min_r) * HEIGHT / WIDTH;
 	mlx->win = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "Fract-ol");
+	mlx->img = mlx_new_image(mlx, WIDTH, HEIGHT);
+	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bits_per_pixel, &mlx->line_length,
+								&mlx->endian);
 	draw_fractal(mlx, argc);
 	mlx_mouse_hook(mlx->win, handle_mouse, mlx);
-	mlx_key_hook(mlx->win, key_hook , mlx);
-	mlx_hook(mlx->win,17, 0L, handle_close, mlx);
+	mlx_key_hook(mlx->win, key_hook, mlx);
+	mlx_hook(mlx->win, 17, 0L, handle_close, mlx);
 	mlx_loop(mlx->mlx);
 }
 
@@ -58,6 +61,7 @@ int	main(int argc, char **argv)
 	double		kr;
 	double		ki;
 
+	mlx.argc = argc;
 	if (argc == 1 || argc > 4)
 	{
 		error();

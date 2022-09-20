@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 10:10:12 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/19 11:04:10 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/20 15:57:29 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	mandelbrot(t_fractol *mlx, int x, int y, double cr, double ci)
 		zi = tmp;
 	}
 	if (is_in_set == 1)
-		mlx_pixel_put(mlx->mlx, mlx->win, x, y, 0x000000);
+		my_mlx_pixel_put(mlx, x, y, 0x000000);
 	else
-		mlx_pixel_put(mlx->mlx, mlx->win, x, y, 0xFFFFFF);
+		my_mlx_pixel_put(mlx, x, y, 0xFFFFFF);
 }

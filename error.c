@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 10:37:10 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/20 11:15:43 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/20 15:29:09 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ size_t	ft_strlen(const char *s)
 {
 	int	count;
 
-
 	count = 0;
 	while (s[count] != '\0')
 	{
@@ -40,7 +39,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t			i;
 	unsigned char	*str;
 	unsigned char	*str2;
-
 
 	i = 0;
 	str = (unsigned char *)s1;
