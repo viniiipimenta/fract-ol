@@ -14,6 +14,7 @@
 # define FRACTOL_H
 # include "./minilib/mlx.h"
 # include <unistd.h>
+# include <math.h>
 # define MAX_ITERATIONS 80 
 # define WIDTH 900
 # define HEIGHT 900
