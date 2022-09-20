@@ -36,7 +36,7 @@ double	ft_atod(const char *str)
 		signal = -1;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	while (str[i] >= 48 && str[i] <= 57 || str[i] == '.')
+	while ((str[i] >= 48 && str[i] <= 57) || str[i] == '.')
 	{
 		if (result >= 9223372036854775807 && signal == 1)
 			return (-1);

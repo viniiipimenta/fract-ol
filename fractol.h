@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 09:52:03 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/19 12:59:12 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/20 09:33:55 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,6 @@ typedef struct s_fractol
 
 void	draw_fractal(t_fractol *f, int arg);
 void	mandelbrot(t_fractol *f, int x, int y, double cr, double ci);
+void	julia(t_fractol *mlx, int x, int y, double zr, double zi);
+double	ft_atod(const char *str);
 #endif

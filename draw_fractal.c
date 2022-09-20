@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 10:11:07 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/19 13:48:14 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/20 09:41:42 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ void	draw_mandelbrot(t_fractol *mlx)
 
 void	draw_fractal(t_fractol *mlx, int arg)
 {
-	if (arg > 1)
-		draw_julia(&mlx);
+	if (arg > 2)
+		draw_julia(mlx);
 	else
-		draw_mandelbrot(&mlx);
+		draw_mandelbrot(mlx);
 }
