@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:31:06 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/20 15:59:00 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/21 11:15:32 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@
 void	cmd_mlx(t_fractol *mlx, int argc)
 {
 	mlx->mlx = mlx_init();
-	mlx->min_r = -2.0;
-	mlx->max_r = 2.0;
+	mlx->min_r = -0.5;
+	mlx->max_r = 2.5;
 	mlx->min_i = -1.5;
-	mlx->max_i = mlx->min_i + (mlx->max_r - mlx->min_r) * HEIGHT / WIDTH;
+	mlx->max_i = mlx->min_i + (mlx->max_r - mlx->min_r) * (HEIGHT / WIDTH);
 	mlx->win = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "Fract-ol");
 	mlx->img = mlx_new_image(mlx, WIDTH, HEIGHT);
 	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bits_per_pixel, &mlx->line_length,

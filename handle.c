@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:51:08 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/20 16:00:11 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/21 13:25:52 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -33,6 +33,26 @@ int	key_hook(int keycode, t_fractol *mlx)
 		mlx_destroy_window(mlx->mlx, mlx->win);
 		exit(0);
 	}
+	else if (keycode == 125)
+	{
+		move(mlx, 0.2, 'U');
+		draw_fractal(mlx, mlx->argc);
+	}
+	else if (keycode == 126)
+	{
+		move(mlx, 0.2, 'D');
+		draw_fractal(mlx, mlx->argc);
+	}
+	else if (keycode == 123)
+	{
+		move(mlx, 0.2, 'L');
+		draw_fractal(mlx, mlx->argc);
+	}
+	else if (keycode == 124)
+	{
+		move(mlx, 0.2, 'R');
+		draw_fractal(mlx, mlx->argc);
+	}
 	return (0);
 }
 
@@ -40,7 +60,7 @@ int	handle_mouse(int button, int x, int y, t_fractol *mlx)
 {
 	double	zoom;
 
-	x = 0;
+		x = 0;
 	y = 0;
 	if (button == 4)
 	{

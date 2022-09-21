@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 09:52:03 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/20 15:55:47 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/21 12:50:42 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # define MAX_ITERATIONS 200 
 # define WIDTH 900
-# define HEIGHT 700
+# define HEIGHT 900
 
 typedef struct s_fractol
 {
@@ -38,7 +38,7 @@ typedef struct s_fractol
 	int		endian;
 }	t_fractol;
 
-
+void	move(t_fractol *mlx, double distance, char direction);
 void	my_mlx_pixel_put(t_fractol *mlx, int x, int y, int color);
 void	draw_fractal(t_fractol *mlx, int arg);
 void	mandelbrot(t_fractol *mlx, int x, int y, double cr, double ci);

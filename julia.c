@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 12:13:47 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/19 12:14:59 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/21 09:47:34 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	julia(t_fractol *mlx, int x, int y, double zr, double zi)
 		zi = tmp;
 	}
 	if (is_in_set == 1)
-		mlx_pixel_put(mlx->mlx, mlx->win, x, y, 0x000000);
+		my_mlx_pixel_put(mlx, x, y, 0x000000);
 	else
-		mlx_pixel_put(mlx->mlx, mlx->win, x, y, 0xFFFFFF);
+		my_mlx_pixel_put(mlx, x, y, 0xFFFFFF);
 }

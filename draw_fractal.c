@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 10:11:07 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/20 16:04:26 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/21 12:48:49 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	draw_mandelbrot(t_fractol *mlx)
 			mandelbrot(mlx, x, y, num_real, num_imaginary);
 		}
 	}
-	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 }
 
 void	draw_fractal(t_fractol *mlx, int arg)
@@ -63,4 +62,5 @@ void	draw_fractal(t_fractol *mlx, int arg)
 		draw_julia(mlx);
 	else
 		draw_mandelbrot(mlx);
+	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
 }
