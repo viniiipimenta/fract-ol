@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 10:37:10 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/22 13:30:54 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:49:53 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 void	error_size(void)
 {
 	write(1, "Wrong size!", 11);
+	write(1, "\n", 1);
 	write(1, "./fractol julia real number > -2.0 and < 2.0 imaginary number > -2.0 and < 2.0", 78);
+	write(1, "\n", 1);
 }
 
 void	error(void)

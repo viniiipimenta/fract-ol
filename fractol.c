@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:31:06 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/22 13:25:32 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:52:41 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,16 @@ int	main(int argc, char **argv)
 		ki = ft_atod(argv[3]);
 		mlx.kr = kr;
 		mlx.ki = ki;
-		if (kr < -2.0 && kr > 2.0)
+		if (mlx.kr < -2 || mlx.kr > 2)
+		{
 			error_size();
-		if (ki < -2.0 && kr > 2.0)
+			exit (0);
+		}
+		if (mlx.ki < -2 || mlx.ki > 2)
+		{
 			error_size();
+			exit (0);
+		}
 	}
 	check_name(argv[1]);
 	cmd_mlx(&mlx, argc);

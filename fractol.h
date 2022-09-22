@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 09:52:03 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/22 13:29:44 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:34:01 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <math.h>
 # include <stdlib.h>
-# define MAX_ITERATIONS 200 
+# define MAX_ITERATIONS 100 
 # define WIDTH 900
 # define HEIGHT 900
 
