@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 09:52:03 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/21 12:50:42 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:29:44 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,23 @@
 
 typedef struct s_fractol
 {
-	void	*mlx;
-	void	*win;
-	double	min_r;
-	double	max_r;
-	double	min_i;
-	double	max_i;
-	double	kr;
-	double	ki;
-	int		argc;
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
+	void		*mlx;
+	void		*win;
+	double		min_r;
+	double		max_r;
+	double		min_i;
+	double		max_i;
+	double		kr;
+	double		ki;
+	int			argc;
+	void		*img;
+	char		*addr;
+	int			bits_per_pixel;
+	int			line_length;
+	int			endian;
 }	t_fractol;
 
+void	error_size(void);
 void	move(t_fractol *mlx, double distance, char direction);
 void	my_mlx_pixel_put(t_fractol *mlx, int x, int y, int color);
 void	draw_fractal(t_fractol *mlx, int arg);

@@ -6,36 +6,26 @@
 /*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:31:06 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/21 11:15:32 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:25:32 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 #include <stdio.h>
 
-//void	check_name(char *str)
-//{
-//	char	*julia_check;
-//	char	*mandelbrot_check;
-//
-//	julia_check = malloc(6);
-//	julia_check = "julia\0";
-//	mandelbrot_check = malloc(11);
-//	mandelbrot_check = "mandelbrot\0";
-//	if (ft_strncmp(str, julia_check, 6) != 0)
-//	{
-//		printf("%d\n", ft_strncmp(str, julia_check, 6));
-//		error();
-//		exit(0);
-//	}
-//	if (ft_strncmp(str, mandelbrot_check, 11) != 0)
-//	{
-//		error();
-//		exit(0);
-//	}
-//	free(julia_check);
-//	free(mandelbrot_check);
-//}
+void	check_name(char *str)
+{
+	if (ft_strncmp(str, "julia", 5) >= 1)
+	{
+		error();
+		exit(0);
+	}
+	if (ft_strncmp(str, "mandelbrot", 10) >= 1)
+	{
+		error();
+		exit(0);
+	}
+}
 
 void	cmd_mlx(t_fractol *mlx, int argc)
 {
@@ -73,8 +63,12 @@ int	main(int argc, char **argv)
 		ki = ft_atod(argv[3]);
 		mlx.kr = kr;
 		mlx.ki = ki;
+		if (kr < -2.0 && kr > 2.0)
+			error_size();
+		if (ki < -2.0 && kr > 2.0)
+			error_size();
 	}
-//	check_name(argv[1]);
+	check_name(argv[1]);
 	cmd_mlx(&mlx, argc);
 	return (0);
 }
