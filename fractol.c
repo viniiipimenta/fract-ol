@@ -3,27 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
+/*   By: mpimenta <mpimenta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:31:06 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/22 13:52:41 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/22 21:36:46 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include <stdio.h>
 
-void	check_name(char *str)
+
+void	check_name(char *str, int argc, t_fractol *mlx)
 {
-	if (ft_strncmp(str, "julia", 5) >= 1)
+	int	ret_julia;
+	int ret_mandel;
+
+	ret_julia = ft_strncmp(str, "julia", 5);
+	ret_mandel = ft_strncmp(str, "mandelbrot", 10);
+	if (ret_julia == 0 || (ret_mandel == 0 && argc == 2))
 	{
-		error();
-		exit(0);
+		ret_julia = 0;
 	}
-	if (ft_strncmp(str, "mandelbrot", 10) >= 1)
+	else
 	{
-		error();
-		exit(0);
+		error_name();
+		exit (0);
+	}
+	if (mlx->kr < -2 || mlx->kr > 2)
+	{
+		error_size();
+		exit (0);
+	}
+	if (mlx->ki < -2 || mlx->ki > 2)
+	{
+		error_size();
+		exit (0);
 	}
 }
 
@@ -52,7 +66,7 @@ int	main(int argc, char **argv)
 	double		ki;
 
 	mlx.argc = argc;
-	if (argc == 1 || argc > 4)
+	if (argc == 1 || argc > 4 || argc == 3)
 	{
 		error();
 		return (0);
@@ -63,18 +77,8 @@ int	main(int argc, char **argv)
 		ki = ft_atod(argv[3]);
 		mlx.kr = kr;
 		mlx.ki = ki;
-		if (mlx.kr < -2 || mlx.kr > 2)
-		{
-			error_size();
-			exit (0);
-		}
-		if (mlx.ki < -2 || mlx.ki > 2)
-		{
-			error_size();
-			exit (0);
-		}
 	}
-	check_name(argv[1]);
+	check_name(argv[1], argc, &mlx);
 	cmd_mlx(&mlx, argc);
 	return (0);
 }
