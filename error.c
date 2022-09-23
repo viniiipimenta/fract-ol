@@ -3,20 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpimenta <mpimenta@student.42.rio>         +#+  +:+       +#+        */
+/*   By: mpimenta <mpimenta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 10:37:10 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/22 13:49:53 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/22 21:34:38 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+void	error_name(void)
+{
+	write(1, "Wrong name!", 11);
+	write(1, "\n", 1);
+	write(1, "./fractol julia <num between -2.0 ", 34); 
+	write(1, "and 2.0> <num between -2.0 and 2.0>", 35);
+	write(1, "\n", 1);
+	write(1, "./fractol mandelbrot", 20);
+	write(1, "\n", 1);
+}
+
+
 void	error_size(void)
 {
 	write(1, "Wrong size!", 11);
 	write(1, "\n", 1);
-	write(1, "./fractol julia real number > -2.0 and < 2.0 imaginary number > -2.0 and < 2.0", 78);
+	write(1, "./fractol julia <num between -2.0 ", 34); 
+	write(1, "and 2.0> <num between -2.0 and 2.0>", 35);
 	write(1, "\n", 1);
 }
 
@@ -24,7 +37,8 @@ void	error(void)
 {
 	write(1, "invalid number of arguments!", 28);
 	write(1, "\n", 1);
-	write(1, "./fractol julia <real number> <imaginary number>", 48);
+	write(1, "./fractol julia <num between -2.0", 33); 
+	write(1, "and 2.0> <num between -2.0 and 2.0>", 35);
 	write(1, "\n", 1);
 	write(1, "./fractol mandelbrot", 20);
 	write(1, "\n", 1);
