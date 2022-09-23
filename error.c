@@ -6,7 +6,7 @@
 /*   By: mpimenta <mpimenta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 10:37:10 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/22 21:46:06 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/23 13:14:01 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@ void	error(void)
 {
 	write(1, "Try one of these options", 24);
 	write(1, "\n", 1);
-	write(1, "./fractol julia <num between -2.0 ", 34); 
+	write(1, "./fractol julia <num between -2.0 ", 34);
 	write(1, "and 2.0> <num between -2.0 and 2.0>", 35);
 	write(1, "\n", 1);
 	write(1, "./fractol mandelbrot", 20);
 	write(1, "\n", 1);
+	exit (0);
 }
 
 size_t	ft_strlen(const char *s)
