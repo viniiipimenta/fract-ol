@@ -38,8 +38,6 @@ typedef struct s_fractol
 	int			endian;
 }	t_fractol;
 
-void	error_name(void);
-void	error_size(void);
 void	move(t_fractol *mlx, double distance, char direction);
 void	my_mlx_pixel_put(t_fractol *mlx, int x, int y, int color);
 void	draw_fractal(t_fractol *mlx, int arg);
@@ -48,7 +46,7 @@ void	julia(t_fractol *mlx, int x, int y, double zr, double zi);
 void	error(void);
 double	ft_atod(char *str);
 int		handle_mouse(int button, int x, int y, t_fractol *mlx);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strcmp(const char *s1, const char *s2);
 int		key_hook(int keycode, t_fractol *mlx);
 int		handle_close(t_fractol *mlx);
 #endif
