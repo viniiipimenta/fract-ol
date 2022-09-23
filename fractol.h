@@ -38,6 +38,7 @@ typedef struct s_fractol
 	int			endian;
 }	t_fractol;
 
+void	error_name(void);
 void	error_size(void);
 void	move(t_fractol *mlx, double distance, char direction);
 void	my_mlx_pixel_put(t_fractol *mlx, int x, int y, int color);
