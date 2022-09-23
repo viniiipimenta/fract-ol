@@ -6,39 +6,40 @@
 /*   By: mpimenta <mpimenta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:31:06 by mpimenta          #+#    #+#             */
-/*   Updated: 2022/09/22 21:36:46 by mpimenta         ###   ########.fr       */
+/*   Updated: 2022/09/22 21:44:44 by mpimenta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
 
-void	check_name(char *str, int argc, t_fractol *mlx)
+int	check_name(char *str, int argc, t_fractol *mlx)
 {
 	int	ret_julia;
 	int ret_mandel;
 
-	ret_julia = ft_strncmp(str, "julia", 5);
-	ret_mandel = ft_strncmp(str, "mandelbrot", 10);
-	if (ret_julia == 0 || (ret_mandel == 0 && argc == 2))
+	ret_julia = ft_strcmp(str, "julia");
+	ret_mandel = ft_strcmp(str, "mandelbrot");
+	if ((ret_julia == 0  && argc == 4)|| (ret_mandel == 0 && argc == 2))
 	{
-		ret_julia = 0;
+		return (0);
 	}
 	else
 	{
-		error_name();
+		error();
 		exit (0);
 	}
 	if (mlx->kr < -2 || mlx->kr > 2)
 	{
-		error_size();
+		error();
 		exit (0);
 	}
 	if (mlx->ki < -2 || mlx->ki > 2)
 	{
-		error_size();
+		error();
 		exit (0);
 	}
+	return (0);
 }
 
 void	cmd_mlx(t_fractol *mlx, int argc)
