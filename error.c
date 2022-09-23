@@ -16,7 +16,7 @@ void	error(void)
 {
 	write(1, "Try one of these options", 24);
 	write(1, "\n", 1);
-	write(1, "./fractol julia <num between -2.0", 33); 
+	write(1, "./fractol julia <num between -2.0 ", 34); 
 	write(1, "and 2.0> <num between -2.0 and 2.0>", 35);
 	write(1, "\n", 1);
 	write(1, "./fractol mandelbrot", 20);
