@@ -15,7 +15,7 @@
 void	put_color_julia(t_fractol *mlx, int x, int y, int n)
 {
 	if (n >= 0 && n <= 10)
-	   	my_mlx_pixel_put(mlx, x, y, 0x002B5B);
+		my_mlx_pixel_put(mlx, x, y, 0x002B5B);
 	if (n > 10 && n < 20)
 		my_mlx_pixel_put(mlx, x, y, 0x0B335E);
 	if (n >= 20 && n <= 30)
@@ -36,7 +36,7 @@ void	put_color_julia(t_fractol *mlx, int x, int y, int n)
 		my_mlx_pixel_put(mlx, x, y, 0x8FE3CF);
 }
 
-void	julia(t_fractol *mlx, int x, int y, double zr, double zi)
+void	julia(t_fractol *mlx, double zr, double zi)
 {
 	int		n;
 	double	tmp;
@@ -56,7 +56,7 @@ void	julia(t_fractol *mlx, int x, int y, double zr, double zi)
 		zi = tmp;
 	}
 	if (is_in_set == 1)
-		my_mlx_pixel_put(mlx, x, y, 0x000000);
+		my_mlx_pixel_put(mlx, mlx->x, mlx->y, 0x000000);
 	else
-		put_color_julia(mlx, x, y, n);
+		put_color_julia(mlx, mlx->x, mlx->y, n);
 }

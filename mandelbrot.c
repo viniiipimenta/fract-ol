@@ -15,7 +15,7 @@
 void	put_color(t_fractol *mlx, int x, int y, int n)
 {
 	if (n >= 0 && n <= 10)
-	   	my_mlx_pixel_put(mlx, x, y, 0x6F38C5);
+		my_mlx_pixel_put(mlx, x, y, 0x6F38C5);
 	if (n > 10 && n < 20)
 		my_mlx_pixel_put(mlx, x, y, 0x7B6DE0);
 	if (n >= 20 && n <= 30)
@@ -36,7 +36,7 @@ void	put_color(t_fractol *mlx, int x, int y, int n)
 		my_mlx_pixel_put(mlx, x, y, 0xEEEEEE);
 }
 
-void	mandelbrot(t_fractol *mlx, int x, int y, double cr, double ci)
+void	mandelbrot(t_fractol *mlx, double cr, double ci)
 {
 	int		n;	
 	double	zr;
@@ -60,7 +60,7 @@ void	mandelbrot(t_fractol *mlx, int x, int y, double cr, double ci)
 		zi = tmp;
 	}
 	if (is_in_set == 1)
-		my_mlx_pixel_put(mlx, x, y, 0x000000);
+		my_mlx_pixel_put(mlx, mlx->x, mlx->y, 0x000000);
 	else
-		put_color(mlx, x, y, n);
+		put_color(mlx, mlx->x, mlx->y, n);
 }

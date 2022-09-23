@@ -17,10 +17,9 @@ void	move(t_fractol *mlx, double distance, char direction)
 	double	center_r;
 	double	center_i;
 
-
 	center_r = mlx->max_r - mlx->min_r;
 	center_i = mlx->max_i - mlx->min_i;
-		if (direction == 'R')
+	if (direction == 'R')
 	{
 		mlx->min_r += center_r * distance;
 		mlx->max_r += center_r * distance;
@@ -41,4 +40,3 @@ void	move(t_fractol *mlx, double distance, char direction)
 		mlx->max_i += center_i * distance;
 	}
 }
-

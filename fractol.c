@@ -12,33 +12,17 @@
 
 #include "fractol.h"
 
-
-int	check_name(char *str, int argc, t_fractol *mlx)
+int	check_name(char *str, int argc)
 {
 	int	ret_julia;
-	int ret_mandel;
+	int	ret_mandel;
 
 	ret_julia = ft_strcmp(str, "julia");
 	ret_mandel = ft_strcmp(str, "mandelbrot");
-	if ((ret_julia == 0  && argc == 4)|| (ret_mandel == 0 && argc == 2))
-	{
+	if ((ret_julia == 0 && argc == 4) || (ret_mandel == 0 && argc == 2))
 		return (0);
-	}
 	else
-	{
 		error();
-		exit (0);
-	}
-	if (mlx->kr < -2 || mlx->kr > 2)
-	{
-		error();
-		exit (0);
-	}
-	if (mlx->ki < -2 || mlx->ki > 2)
-	{
-		error();
-		exit (0);
-	}
 	return (0);
 }
 
@@ -51,8 +35,8 @@ void	cmd_mlx(t_fractol *mlx, int argc)
 	mlx->max_i = mlx->min_i + (mlx->max_r - mlx->min_r) * (HEIGHT / WIDTH);
 	mlx->win = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "Fract-ol");
 	mlx->img = mlx_new_image(mlx, WIDTH, HEIGHT);
-	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bits_per_pixel, &mlx->line_length,
-								&mlx->endian);
+	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bits_per_pixel,
+			&mlx->line_length, &mlx->endian);
 	draw_fractal(mlx, argc);
 	mlx_mouse_hook(mlx->win, handle_mouse, mlx);
 	mlx_key_hook(mlx->win, key_hook, mlx);
@@ -63,23 +47,20 @@ void	cmd_mlx(t_fractol *mlx, int argc)
 int	main(int argc, char **argv)
 {
 	t_fractol	mlx;
-	double		kr;
-	double		ki;
 
 	mlx.argc = argc;
 	if (argc == 1 || argc > 4 || argc == 3)
-	{
 		error();
-		return (0);
-	}
 	else if (argc > 2 && argc < 5)
 	{
-		kr = ft_atod(argv[2]);
-		ki = ft_atod(argv[3]);
-		mlx.kr = kr;
-		mlx.ki = ki;
+		mlx.kr = ft_atod(argv[2]);
+		mlx.ki = ft_atod(argv[3]);
+		if (mlx.kr < -2 || mlx.kr > 2)
+			error();
+		if (mlx.ki < -2 || mlx.ki > 2)
+			error();
 	}
-	check_name(argv[1], argc, &mlx);
+	check_name(argv[1], argc);
 	cmd_mlx(&mlx, argc);
 	return (0);
 }

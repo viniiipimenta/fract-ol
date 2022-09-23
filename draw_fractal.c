@@ -29,7 +29,9 @@ void	draw_julia(t_fractol *mlx)
 				* (mlx->max_r - mlx->min_r) / WIDTH;
 			num_imaginary = mlx->min_i + (double)y
 				* (mlx->max_i - mlx->min_i) / HEIGHT;
-			julia(mlx, x, y, num_real, num_imaginary);
+			mlx->x = x;
+			mlx->y = y;
+			julia(mlx, num_real, num_imaginary);
 		}
 	}
 }
@@ -51,7 +53,9 @@ void	draw_mandelbrot(t_fractol *mlx)
 				* (mlx->max_r - mlx->min_r) / WIDTH;
 			num_imaginary = mlx->min_i + (double)y
 				* (mlx->max_i - mlx->min_i) / HEIGHT;
-			mandelbrot(mlx, x, y, num_real, num_imaginary);
+			mlx->x = x;
+			mlx->y = y;
+			mandelbrot(mlx, num_real, num_imaginary);
 		}
 	}
 }
